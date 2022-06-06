@@ -805,33 +805,37 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="signin-container">
                         <form action="#" name="frm-login" method="post">
-                            <p class="form-row">
-                                <label for="fid-name">Email Address:<span class="requite">*</span></label>
-                                <input type="text" id="fid-name" name="name" value="" class="txt-input">
-                            </p>
-                            <p class="form-row">
-                             <label for="fid-userGroup">Login as:<span class="requite">*</span></label>
-                            </p>
-                            <p class="form-row col-md-8">
-                                                                
-                                <select name="userGroup" id="fid-userGroup" class="txt-input">
-                                    <option value="Buyer">Buyer</option>
-                                    <option value="Seller">Seller</option>
-                                    <option value="Admin">Admin</option>
-                                </select>
-                             
-                            </p>
-                            <p class="form-row>
-                                <label>(Buyer, Seller, Admin) <span class="requite">*</span></label>        
-                            </p>
-                            <p class="form-row">
-                                <label for="fid-pass">Password:<span class="requite">*</span></label>
-                                <input type="email" id="fid-pass" name="email" value="" class="txt-input">
-                            </p>
-                            <p class="form-row wrap-btn">
-                                <button class="btn btn-submit btn-bold" type="submit">sign in</button>
-                                <a href="#" class="link-to-help">Forgot your password</a>
-                            </p>
+                            <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </div>
+                                <p class="form-row">
+                                    <label for="userGroup">Login as...</label>
+                                </p>
+
+                                <div class="form-group ">
+                                    <label for="exampleFormControlSelect1">(Buyer, Seller, Admin)</label>
+                                    <select class="form-control form-select-lg col-8" id="exampleFormControlSelect1" style="color:black">
+                                      <option value="Buyer" selected>Buyer</option>
+                                      <option value="Seller">Seller</option>
+                                      <option value="Admin">Admin</option>
+                                      
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                </div>
+
+
+
+                                <p class="form-row wrap-btn ">
+                                    <button class="btn btn-submit btn-bold " type="submit ">sign in</button>
+                                    <a href="# " class="link-to-help ">Forgot your password</a>
+                                </p>
+
+
                         </form>
                     </div>
                 </div>
