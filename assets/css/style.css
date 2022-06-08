@@ -6823,6 +6823,10 @@ body.open-overlay #overlay {
     width: 100%;
 }
 
+.signin-container .form-row .form-control .select {
+    color: #000000;
+}
+
 .signin-container .form-row .btn-submit {
     min-width: 132px;
     margin-top: 7px;

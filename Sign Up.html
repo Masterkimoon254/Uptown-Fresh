@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="assets/css/slick.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/main-color.css">
+
+
 </head>
 
 <body>
@@ -62,7 +64,7 @@
                             
                         </select>
                         </li>
-                        <li><a href="login.html" class="login-link"><i class="biolife-icon icon-login"></i>Login/Register</a></li>
+                        <li><a href="#Register" class="login-link"><i class="biolife-icon icon-login"></i>Login/Register</a></li>
                     </ul>
                 </div>
             </div>
@@ -631,7 +633,7 @@
 
     <!--Hero Section-->
     <div class="hero-section hero-background">
-        <h1 class="page-title">Uptown Fresh</h1>
+        <h1 class="page-title">Uptown Fresh Sign Up</h1>
     </div>
 
     <!--Navigation section-->
@@ -653,7 +655,7 @@
                 <div class="row">
 
                     <!--Form Sign Up-->
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="Register">
                         <div class="signin-container">
                             <form action="#" name="frm-login" method="post">
                                 <div class="form-row">
@@ -677,30 +679,41 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="contact">Phone Number</label>
-                                    <input type="number" class="form-control" id="inputNumber" placeholder="07XXXXXXXX" required>
+                                    <input type="tel" class="form-control" id="inputNumber" placeholder="07XX-XXX-XXX" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="uploadProfile">Upload Profile Picture</label>
-                                    <input type="file" class="form-control-file" id="inputProfilePic" required>
+                                    <input type="file" class="form-control-file" id="inputProfilePic" accept=".jpg, .png, .jpeg" required>
                                 </div>
                                 <div class="form-group">
-                                    <div class="form-check">
-
+                                    <div class="form-row">
+                                        <label for="Users">Choose an account:</label>
                                     </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="userGroup" id="userBuyer" value="Buyer" checked>
+                                        <label class="form-check-label" for="userBuyer"> Buyer</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="userGroup" id="userSeller" value="Seller">
+                                        <label class="form-check-label" for="userSeller"> Seller</label>
+                                    </div>
+
+
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password</label>
-                                    <input type="password" class="form-control" name="" id="inputPassword" required>
+                                    <input type="password" class="form-control" name="" id="inputPassword" title="Password must contain: Minimum 8 characters, atleast 1 Alphabet and 1 Number" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
                                 </div>
                                 <div class="form-group">
                                     <label for="password"> Confirm Password</label>
-                                    <input type="password" class="form-control" name="" id="inputPassword" required>
+                                    <input type="password" class="form-control" name="" id="confirmInputPassword" required>
                                 </div>
 
                                 <p class="form-row wrap-btn ">
                                     <button class="btn btn-submit btn-bold " type="submit ">sign Up</button>
-                                    <a href="# " class="link-to-help ">Forgot your password</a>
+                                    <a href="# " class="link-to-help " onclick="document.getElementById('forgotPassword').style.display('block')">Forgot your password</a>
                                 </p>
 
                             </form>
@@ -715,12 +728,12 @@
                                 <p class="sub-title">Login in to your Account and you’ll be able to:</p>
                                 <ul class="lis">
                                     <li>Check out faster</li>
-                                    <li>Save multiple shipping anddesses</li>
+                                    <li>Save multiple shipping addresses</li>
                                     <li>Access your order history</li>
                                     <li>Track new orders</li>
                                     <li>Save items to your Wishlist</li>
                                 </ul>
-                                <a href="#" class="btn btn-bold">Log In</a>
+                                <a href="./Log in.html" class="btn btn-bold">Log In</a>
                             </div>
                         </div>
                     </div>
@@ -942,6 +955,32 @@
 
     <!-- Scroll Top Button -->
     <a class="btn-scroll-top"><i class="biolife-icon icon-left-arrow"></i></a>
+    <script type="text/javascript">
+        window.onload = function() {
+            let inputPassword = document.getElementById('inputPassword');
+            let confirmInputPassword = document.getElementById('confirmInputPassword');
+
+            inputPassword.onchange = confirmInputPassword;
+            confirmInputPassword.onkeyup = confirmInputPassword;
+
+            function ConfirmInputPassword() {
+                confirmInputPassword.setCustomValidity("");
+
+                if (inputPassword.value != confirmInputPassword.value) {
+                    confirmInputPassword.setCustomValidity("Passwords do not match.");
+                }
+            }
+        }
+
+        var modal = document.getElementById('forgotPassword');
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
 
     <script src="assets/js/jquery-3.4.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
